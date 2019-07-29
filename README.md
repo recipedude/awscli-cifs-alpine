@@ -23,3 +23,18 @@ Pass in the following environment variables for AWS CLI credientals.
 
 For more options you can configure with environment variables refer to: [AWS Environment Variables](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-envvars.html)
 
+## Environment variables
+
+Example of environment variables that will:
+
+1. Mount a SMB/Samba share on ```/data```
+2. Sync the ```/data``` folder to an S3 bucket
+
+```
+AWS_ACCESS_KEY_ID=_YOUR_ACCESS_KEY_
+AWS_SECRET_ACCESS_KEY=_YOUR_SECRET_
+AWS_DEFAULT_REGION=us-east-1
+CIFS_SHARE=//_YOUR_SHARE_SERVER_>/<_YOUR_SHARE_PATH_
+CIFS_OPTS=username=_YOUR_SHARE_USERNAME_,password=_YOUR_SHARE_PASSWORD_,domain=_YOUR_SHARE_DOMAIN+
+AWS_S3_CMD=sync . s3://_YOUR_S3_BUCKET_NAME_
+```

@@ -1,6 +1,6 @@
 #!/bin/sh
 
 . bin/vars.sh
-docker stop $IMAGE_NAME
-docker rm $IMAGE_NAME
+
+bin/reset.sh
 docker run -d --privileged --name $IMAGE_NAME --env-file config.env $NAMESPACE/$IMAGE_NAME:$VER
